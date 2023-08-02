@@ -1,0 +1,637 @@
+{
+	"info": {
+		"_postman_id": "56f8c300-841d-4c9a-b7fc-f124409b14f4",
+		"name": "Notes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15719295"
+	},
+	"item": [
+		{
+			"name": "All Notes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/notes/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notes",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/notes/",
+							"path": [
+								"notes",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 02 Aug 2023 02:51:09 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "465"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"Test\",\n        \"content\": \"Test Test\",\n        \"pinned\": true,\n        \"timestamp\": \"2023-08-02T01:30:58.814870Z\",\n        \"image\": \"http://localhost:8000/media/note_images/248222418_2177443099102475_4735857022879522646_n.jpg\",\n        \"background_color\": \"\"\n    },\n    {\n        \"id\": 2,\n        \"title\": \"Test 2\",\n        \"content\": \"Test Test\",\n        \"pinned\": true,\n        \"timestamp\": \"2023-08-02T02:50:24.224490Z\",\n        \"image\": \"http://localhost:8000/media/note_images/248222418_2177443099102475_4735857022879522646_n_z24ly8V.jpg\",\n        \"background_color\": \"\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Note",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/notes/1/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notes",
+						"1",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/notes/1/",
+							"path": [
+								"notes",
+								"1",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 02 Aug 2023 02:52:04 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "226"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"title\": \"Test\",\n    \"content\": \"Test Test\",\n    \"pinned\": true,\n    \"timestamp\": \"2023-08-02T01:30:58.814870Z\",\n    \"image\": \"http://localhost:8000/media/note_images/248222418_2177443099102475_4735857022879522646_n.jpg\",\n    \"background_color\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Test 2",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Test Test",
+							"type": "text"
+						},
+						{
+							"key": "pinned",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "background_color",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Creator/Desktop/248222418_2177443099102475_4735857022879522646_n.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/notes/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notes",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Test 2",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Test Test",
+									"type": "text"
+								},
+								{
+									"key": "pinned",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "background_color",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Creator/Desktop/248222418_2177443099102475_4735857022879522646_n.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "/notes/",
+							"path": [
+								"notes",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 02 Aug 2023 02:50:24 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "236"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"title\": \"Test 2\",\n    \"content\": \"Test Test\",\n    \"pinned\": true,\n    \"timestamp\": \"2023-08-02T02:50:24.224490Z\",\n    \"image\": \"http://localhost:8000/media/note_images/248222418_2177443099102475_4735857022879522646_n_z24ly8V.jpg\",\n    \"background_color\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Node",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Test 1 Updated",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Test Updated",
+							"type": "text"
+						},
+						{
+							"key": "pinned",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "background_color",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Creator/Desktop/248222418_2177443099102475_4735857022879522646_n.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/notes/1/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notes",
+						"1",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Test 1 Updated",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Test Updated",
+									"type": "text"
+								},
+								{
+									"key": "pinned",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "background_color",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Creator/Desktop/248222418_2177443099102475_4735857022879522646_n.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "/notes/1/",
+							"path": [
+								"notes",
+								"1",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 02 Aug 2023 02:55:09 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "239"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"title\": \"Test 1 Updated\",\n    \"content\": \"Test Updated\",\n    \"pinned\": true,\n    \"timestamp\": \"2023-08-02T01:30:58.814870Z\",\n    \"image\": \"http://localhost:8000/media/note_images/248222418_2177443099102475_4735857022879522646_n.jpg\",\n    \"background_color\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Pin Note",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "pinned",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/notes/1/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notes",
+						"1",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pinned",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "/notes/1/",
+							"path": [
+								"notes",
+								"1",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 02 Aug 2023 02:56:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "240"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"title\": \"Test 1 Updated\",\n    \"content\": \"Test Updated\",\n    \"pinned\": false,\n    \"timestamp\": \"2023-08-02T01:30:58.814870Z\",\n    \"image\": \"http://localhost:8000/media/note_images/248222418_2177443099102475_4735857022879522646_n.jpg\",\n    \"background_color\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Note",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/notes/2/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"notes",
+						"2",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/notes/2/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"notes",
+								"2",
+								""
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 02 Aug 2023 02:58:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
