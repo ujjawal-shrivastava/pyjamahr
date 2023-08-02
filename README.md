@@ -48,3 +48,8 @@ To start the API and Postgres services run
   docker compose up
 ```
 
+## TODO
+
+- Logging & Error Handling Middlewares
+- Testing CI/CD
+- Gunicorn server
