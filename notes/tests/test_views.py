@@ -1,7 +1,7 @@
 from django.urls import reverse
 from rest_framework.test import APITestCase
 from rest_framework import status
-from .models import Note
+from notes.models import Note
 
 class NoteViewSetTest(APITestCase):
 
@@ -15,7 +15,7 @@ class NoteViewSetTest(APITestCase):
         self.assertEqual(len(response.data), 1)
     
     def test_create_note(self):
-        url = reverse('note-create')
+        url = reverse('note-list')
         data = {'title': 'New Note', 'content': 'This is a new note.'}
         response = self.client.post(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)

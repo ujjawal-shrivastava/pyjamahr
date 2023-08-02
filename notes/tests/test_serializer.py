@@ -1,6 +1,6 @@
 from django.test import TestCase
-from .models import Note
-from .serializers import NoteSerializer
+from notes.models import Note
+from notes.serializers import NoteSerializer
 
 
 class NoteSerializerTest(TestCase):
@@ -24,9 +24,9 @@ class NoteSerializerTest(TestCase):
         self.assertFalse(serializer.is_valid())
 
     def test_serializer_field_required(self):
-        serializer = NoteSerializer(data={"content": "Content is required."})
+        serializer = NoteSerializer(data={"title": "Content is required."})
         self.assertFalse(serializer.is_valid())
-        self.assertEqual(serializer.errors["title"][0], "This field is required.")
+        self.assertEqual(serializer.errors["content"][0], "This field is required.")
 
     def test_serializer_field_optional(self):
         serializer = NoteSerializer(
